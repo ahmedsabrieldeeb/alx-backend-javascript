@@ -3,9 +3,9 @@
 import Car from './10-car';
 
 export default class EVcar extends Car {
-  constructor(brand = undefined, motor = undefined, color = undefined, battery = undefined) {
+  constructor(brand = undefined, motor = undefined, color = undefined, range = undefined) {
     super(brand, motor, color);
-    this._battery = battery;
+    this._range = range;
   }
 
   cloneCar() {
