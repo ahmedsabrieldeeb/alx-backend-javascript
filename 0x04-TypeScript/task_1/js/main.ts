@@ -37,3 +37,38 @@ function printTeacher(firstName: string, lastName: string): string {
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
+
+/** Write a Class named StudentClass:
+***
+*** The constructor accepts firstName(string) and lastName(string) arguments
+*** The class has a method named workOnHomework that return the string Currently working
+*** The class has a method named displayName. It returns the firstName of the student
+*** The constructor of the class should be described through an Interface
+*** The class should be described through an Interface.
+*/
+
+interface StudentClassInterface {
+  firstName: string;
+  lastName: string;
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+};
+
+class StudentClass implements StudentClassInterface {
+  constructor(public firstName: string, public lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  };
+
+  displayName(): string {
+    return this.firstName;
+  };
+};
