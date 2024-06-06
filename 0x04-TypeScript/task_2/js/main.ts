@@ -127,3 +127,28 @@ function createEmployee(salary: number | string): Director | Teacher {
   else
     return new Teacher(); 
 };
+
+
+/**
+ * Checks if an employee is a Director.
+ * @param employee - The employee to check.
+ * @returns `true` if the employee is a Director, `false` otherwise.
+ */
+function isDirector(employee: Teacher | Director): boolean {
+  if (employee instanceof Director)
+    return true;
+  else
+    return false;
+};
+
+/**
+ * Executes work tasks based on the type of employee.
+ * @param {Teacher | Director} employee - The employee to execute work tasks for.
+ * @returns {string} A string representing the work tasks performed by the employee.
+ */
+function executeWork(employee: Teacher | Director): string {
+  if (isDirector(employee))
+    return (employee as Director).workDirectorTasks();
+  else
+    return (employee as Teacher).workTeacherTasks();
+};
