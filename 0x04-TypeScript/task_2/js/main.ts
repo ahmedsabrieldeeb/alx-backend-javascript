@@ -152,3 +152,19 @@ function executeWork(employee: Teacher | Director): string {
   else
     return (employee as Teacher).workTeacherTasks();
 };
+
+type Subjects =  'Math' | 'History';
+
+/**
+ * Function to teach a class based on the subject for the day.
+ * 
+ * @param todayClass The subject for the day's class, can be either 'Math' or 'History'.
+ * @returns A string indicating the action of teaching the specified subject.
+ */
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math')
+    return 'Teaching Math';
+  
+  if (todayClass === 'History')
+    return 'Teaching History';
+};
